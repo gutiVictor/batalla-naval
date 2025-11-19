@@ -7,6 +7,8 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: '*',
+    methods: ['GET', 'POST'],
+    credentials: true,
   },
 });
 
@@ -125,4 +127,4 @@ io.on('connection', (socket) => {
 const PORT = process.env.PORT || 4000;
 server.listen(PORT, () => {
   console.log(`Servidor escuchando en puerto ${PORT}`);
-}); 
+});
