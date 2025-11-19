@@ -7,7 +7,7 @@ import confetti from 'canvas-confetti';
 import { soundManager } from './soundManager';
 import './App.css';
 
-const socket = io('http://localhost:4000');
+const socket = io(process.env.REACT_APP_BACKEND_URL || 'http://localhost:4000');
 
 const BOARD_SIZE = 10;
 
